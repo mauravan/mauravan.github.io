@@ -166,6 +166,10 @@ nav>svg {
     .tab-contianer {
         flex-direction: column;
     }
+    
+    .email-me {
+        display: none!important;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
