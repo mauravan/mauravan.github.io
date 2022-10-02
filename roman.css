@@ -1,0 +1,557 @@
+:root {
+    --main-bg-color: #EDE6E4;
+    --secondary-bg-color: #BAB4B3;
+    --primary-font-color: #6E5048;
+    --secondary-font-color: #6E6A69;
+    --accent-color: #ecd9d5;
+
+    --body-margin: 10px;
+    --navbar-height: 115px;
+
+    --max-main-width: 1250px;
+
+    font-family: 'Lucida Console', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--secondary-bg-color);
+    border: var(--body-margin) var(--main-bg-color) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: fixed;
+    transition: top 0.3s;
+    z-index: 10;
+    top: var(--body-margin);
+    left: var(--body-margin);
+    right: calc(4 * var(--body-margin));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-bg-color);
+}
+
+nav img {
+    height: var(--navbar-height);
+    width: var(--navbar-height);
+}
+
+nav>ol {
+    background-color: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav>ol>li {
+    background-color: inherit;
+    box-sizing: content-box;
+    counter-increment: item;
+    margin: 5px 12.5px;
+}
+
+nav>ol>li::before {
+    content: "0"counter(item) ".";
+    margin-right: 5px;
+    color: var(--primary-font-color);
+    text-align: right;
+}
+
+nav>ol>li>a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav>ol>li>a:hover {
+    color: var(--primary-font-color);
+}
+
+nav>svg {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sidebar {
+    z-index: 11;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--secondary-font-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar>svg {
+    position: absolute;
+    top: 52px;
+    right: 40px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sidebar>ol {
+    margin-top: 60px;
+    list-style: none;
+}
+
+.sidebar>ol>li {
+    font-size: large;
+    counter-increment: item;
+    margin: 15px 0;
+    list-style: none;
+}
+
+.sidebar>ol li::before {
+    content: "0"counter(item) ".";
+    margin-right: 5px;
+    color: var(--primary-font-color);
+    text-align: right;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 790px) {
+    nav>svg#hamburger {
+        display: block;
+    }
+
+    nav>ol {
+        display: none;
+    }
+
+    .compass {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .section-content {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-height: 440px) and (max-width: 790px) {
+    .email-me {
+        display: none !important;
+    }
+}
+
+main {
+    margin: 0 90px;
+    max-width: var(--max-main-width);
+    background-color: var(--secondary-bg-color);
+    padding-top: calc(var(--navbar-height) + var(--body-margin));
+}
+
+main>section {
+    min-height: 80vh;
+}
+
+main section:not(:nth-of-type(1)) {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+main>section h3 {
+    display: inline-block;
+}
+
+main>section h3:first-of-type {
+    display: inline-block;
+    color: var(--primary-font-color);
+    margin-right: 10px;
+}
+
+main h1 {
+    margin: 0;
+    font-size: clamp(40px, 8vw, 80px);
+}
+
+main h2 {
+    margin: 0;
+    font-size: clamp(20px, 9vw, 40px);
+    font-style: normal;
+}
+
+main p {
+    max-width: 33em;
+    text-align: justify;
+}
+
+main a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+main a:hover {
+    color: var(--secondary-font-color);
+}
+
+main .section-content {
+    display: flex;
+}
+
+main .section-content ul {
+    columns: 2;
+    column-gap: 32px;
+    padding: 16px;
+    list-style: none;
+}
+
+main .section-content ul li::before {
+    content: "\2022";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+main .section-content .image-wrapper {
+    box-sizing: content-box;
+    padding: 0 50px;
+    margin-top: 150px;
+    border: 4px solid var(--accent-color);
+    align-self: center;
+}
+
+main .section-content .image-wrapper>div {
+    position: relative;
+    top: -50px;
+    margin: 0;
+    height: 338.078px;
+    background-color: var(--accent-color);
+    width: fit-content;
+}
+
+main .section-content .image-wrapper>div:hover {
+    top: -40px;
+}
+
+main .section-content img {
+    opacity: 0.3;
+    transition: opacity .25s linear;
+    will-change: opacity;
+}
+
+main .section-content img:hover {
+    opacity: 1;
+    transition: opacity .25s linear;
+    will-change: opacity;
+}
+
+/* TABLIST WORK */
+.tab-contianer {
+    max-width: 700px;
+    display: flex;
+}
+
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.tab button {
+    background-color: var(--secondary-bg-color);
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 40px 16px;
+    transition: 0.3s;
+    font-family: 'Lucida Console', monospace;
+    font-weight: 600;
+
+    border-left: 3px solid var(--primary-font-color);
+}
+
+.tab button:hover {
+    background-color: var(--accent-color);
+}
+
+.tab button.active {
+    border-left: 3px solid var(--accent-color);
+}
+
+.tabcontent-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.tabcontent {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    padding: 0 12px;
+    border-top: none;
+    margin-left: 16px;
+
+    border-top: 2px solid var(--primary-font-color);
+}
+
+.tabcontent ul {
+    padding: 16px;
+    list-style: none;
+}
+
+.tabcontent ul li {
+    margin-bottom: 12px;
+    list-style: none;
+}
+
+.tabcontent ul li::before {
+    content: "\2022";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* EMAIL ADDRESS */
+.email-me {
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    left: auto;
+    right: 40px;
+    z-index: 12;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.email-me>a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 10px;
+}
+
+.email-me::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--accent-color);
+}
+
+
+/* SOCIALS */
+.connect-with-me {
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    right: auto;
+    left: 50px;
+    bottom: 30px;
+    z-index: 10;
+    width: clamp(25px, 8vw, 50px);
+    height: clamp(25px, 8vw, 50px);
+    color: var(--primary-font-color);
+    cursor: pointer;
+}
+
+.socials-icon-container {
+    position: fixed;
+    bottom: 70px;
+    left: 100px;
+    width: 160px;
+    opacity: 0;
+
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+
+    transition: opacity 1s;
+    transition-delay: 0s;
+}
+
+.socials-icon-container svg {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    color: var(--primary-font-color);
+}
+
+.socials-icon-container svg:hover {
+    margin-top: 0;
+}
+
+/* COMPASS */
+.compass {
+    position: relative;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+
+    border: 3px solid var(--primary-font-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compass>div:first-of-type {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    border: 3px dotted var(--primary-font-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compass .needle-north {
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: translateY(-80px);
+
+
+}
+
+.compass .needle-east {
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(90deg) translateY(-80px);
+}
+
+.compass .needle-south {
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(180deg) translateY(-80px);
+}
+
+.compass .needle-west {
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(270deg) translateY(-80px);
+}
+
+.compass .needle-north-east {
+    position: absolute;
+    width: 60px;
+    height: 140px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(45deg) translateY(-50px);
+}
+
+.compass .needle-north-west {
+    position: absolute;
+    width: 60px;
+    height: 140px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(-45deg) translateY(-50px);
+}
+
+.compass .needle-south-west {
+    position: absolute;
+    width: 60px;
+    height: 140px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(225deg) translateY(-50px);
+}
+
+.compass .needle-south-east {
+    position: absolute;
+    width: 60px;
+    height: 140px;
+    background: rgb(110, 106, 105);
+    background: linear-gradient(90deg, rgba(110, 106, 105, 1) 0%, rgba(110, 106, 105, 1) 50%, rgba(110, 80, 72, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(135deg) translateY(-50px);
+}
+
+.compass .compass-needle-north {
+    position: absolute;
+    width: 60px;
+    height: 140px;
+    background: rgb(186, 180, 179);
+    background: linear-gradient(90deg, rgba(186, 180, 179, 1) 0%, rgba(186, 180, 179, 1) 50%, rgba(233, 89, 51, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(0rad) translateY(-70px);
+}
+
+.compass .compass-needle-south {
+    position: absolute;
+    width: 60px;
+    height: 140px;
+    background: rgb(180, 180, 179);
+    background: linear-gradient(90deg, rgba(180, 180, 179, 1) 0%, rgba(180, 180, 179, 1) 50%, rgba(40, 40, 40, 1) 50%);
+    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
+    transform: rotate(3.14159rad) translateY(-70px);
+}
+
+.compass .compass-pin {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #cfb53b;
+    border: 3px solid black;
+}

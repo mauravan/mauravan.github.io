@@ -1,25 +1,219 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="de" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <title>Roman's Palace</title>
-  </head>
-  <body>
-    <img src="./background2.jpg" class="image-background" />
-    <div class="logo">
-      M R
-    </div>
-    <nav>
-      <button>Nav</button>
-      <a href="Home" class="deg0">Home</a>
-      <a href="Home" class="deg90">Portfolio</a>
-      <a href="Home" class="deg135">About</a>
-      <a href="Home" class="deg225">Resume</a>
-      <a href="Home" class="deg270">Contact</a>
-    </nav>
+<html lang="de">
 
-    <h1 class="title">DEVELOPER</h1>
-  </body>
+<head>
+    <link rel="stylesheet" href="roman.css">
+    <title>Roman Meier</title>
+    <link rel="icon" type="image/x-icon" href="/Favicon.png">
+</head>
+
+<body>
+    <nav id="nav">
+        <a href="#top"><img src="Logo.png"></a>
+        <ol type="i">
+            <li><a href="#about">Über</a></a>
+            <li><a href="#experience">Erfahrung</a></a>
+            <li><a href="#contact">Arbeite mit mir</a></a>
+            <li><a href="">Resume</a></a>
+        </ol>
+        <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+        </svg>
+        <div id="sidebar" class="sidebar">
+            <svg id="hamburger-open" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor">
+                <path
+                    d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z">
+                </path>
+            </svg>
+            <ol type="i">
+                <li><a href="#about">Über</a></a>
+                <li><a href="#experience">Erfahrung</a></a>
+                <li><a href="#contact">Arbeite mit mir</a></a>
+                <li><a href="">Resume</a></a>
+            </ol>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <h1>Roman Meier</h1>
+            <h2>Software Ingenieur und Consultant.</h2>
+            <p>Grüezi! Mit Technologien, die auf <b>Java</b> und <b>JavaScript</b> basieren,
+                helfe ich meinen Kunden enterprise-grade <b>Web-Applikationen</b> zu bauen,
+                die einen echten <b>Mehrwert</b> bringen</p>
+
+            <div class="compass" id="compass">
+                <div>
+                    <div class="needle-north-west"></div>
+                    <div class="needle-north-east"></div>
+                    <div class="needle-south-west"></div>
+                    <div class="needle-south-east"></div>
+                    <div class="needle-north"></div>
+                    <div class="needle-south"></div>
+                    <div class="needle-east"></div>
+                    <div class="needle-west"></div>
+                    <div id="north" class="compass-needle-north"></div>
+                    <div id="south" class="compass-needle-south"></div>
+                    <div id="pin" class="compass-pin"></div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div>
+                <h3>01.</h3>
+                <h3>Über mich</h3>
+            </div>
+            <div class="section-content">
+                <div>
+                    <p>Meine Begeisterung für Technologie begann bereits in meiner Kindheit,
+                        als mein Vater mir und meinen Geschwistern den ersten Computer mit Windows 95
+                        und einige Spiele dafür nach Hause brachte. Das Ganze hat mir so viel Spass gemacht,
+                        dass ich 2009 eine Berufslehre als Systemtechniker absolvierte.
+                        Das Interesse für die Applikations-Entwicklug kam dann im Studium an der <a
+                            href="https://www.fhnw.ch/de/">FHNW</a> noch dazu.
+                        Mittlerweile konnte ich bereits für ein <a href="https://youengineering.ch/">kleines
+                            Startup</a>,
+                        eine <a href="https://www.ti8m.com/">grössere Unternehmung</a> sowie deren Kunden verschiedene
+                        Projekte umsetzen.</p>
+                    <p>Abgesehen von Technologie liebe ich Sport, das Backen von Sauerteig-Broten und das Verbringen von
+                        Zeit mit meinen Liebsten.</p>
+
+                    <p>Hier sind einige Technologien, die ich verwende:</p>
+                    <ul>
+                        <li>Java, Spring, Quarkus</li>
+                        <li>TypeScript, React, Node.js</li>
+                        <li>HTML, CSS, SCSS</li>
+                        <li>Docker, OpenShift, Azure</li>
+                        <li>Maven, Gradle, NPM</li>
+                        <li>Intellij IDEA, VSCode</li>
+                    </ul>
+                </div>
+                <div class="image-wrapper">
+                    <div>
+                        <img src="roman.JPG" width="300px">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3>02.</h3>
+            <h3>Was ich bisher gemacht habe</h3>
+            <div class="tab-contianer">
+                <div class="tab">
+                    <button id="defaultOpen" class="tablinks active" onclick="openWorkplace(event, 'TimAG')">Ti&m
+                        AG</button>
+                    <button class="tablinks" onclick="openWorkplace(event, 'youEngineeringAG')">youEngineering
+                        AG</button>
+                    <button class="tablinks" onclick="openWorkplace(event, 'AxpoInformatikAG')">Axpo Informatik
+                        AG</button>
+                </div>
+                <div class="tabcontent-container">
+                    <div id="TimAG" class="tabcontent">
+                        <h4>Professional Software Engineer</h4>
+                        <h5>2020 - jetzt</h5>
+                        <p>
+                            Seit 2020 darf ich für die Ti&m und die SASIS AG am <a href="https://ship-standard.ch/" target="_blank">SHIP-Standard</a> mitarbeiten.
+                            <ul>
+                                <li>Entwicklung und Planung diverser Teile der Applikation im Java Backend sowie React Frontend</li>
+                                <li>Eigenständige Umsetzung einer Applikation, die aus XSD Schema Definitionen Formulare generiert</li>
+                                <li>Optimierung des XML Standards</li>
+                                <li>Betrieb der Applikationen bei den Kunden und Support im 3 Level</li>
+                                <li>Hier konnte ich mit umfassendes Wissen über XML und XSLT Prozessoren aneignen und erfolgreich zur Anwendung bringen</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="youEngineeringAG" class="tabcontent">
+                        <h4>Junior Software Engineer</h4>
+                        <h5>2017 - 2020</h5>
+                        <p>Nach abgeschlossener Rekrutenschule und Studium durfte ich in diesem Basler Start-Up meine ersten Erfahrungen als Entwickler von grossen Applikationen machen.
+                            <ul>
+                                <li>Erweiterung der Bestellapplikation eines Telekommunikationsanbieters im gesamten Stack. Java, AngularJS, Selenium</li>
+                                <li>Neuentwicklung des Frontends einer E-Banking Applikation. 
+                                    In einem Team von 4 Entwicklern konnten wir innerhalb eines Jahres ein komplettes Banking-Frontend mit Dashboard entwickeln.
+                                    Dabei konnte ich mit umfassendes Browser-Wissen aneignen. 
+                                </li>
+                                <li>
+                                    Für eine Schweizer Versicherung haben wir ein Kundenportal erarbeitet und umbesetzt. Hier durfte ich erstmal mit Angular 2+
+                                    verwenden sowie mein Frontend wissen erweitern. Zudem konnte ich Erfahrung mit der Arbeit in einem grossen Team von Entwicklern sammeln.
+                                </li>
+                                <li>
+                                    Für die selbe Versicherung durfte ich in der Realisierung eines neuen BVG-Portals mithelfen. 
+                                    Hier kam ich das erste Mal mit einer Microservice-Architektur und Technologien wie Openshift, Kafka und Camunda in Kontakt. 
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="AxpoInformatikAG" class="tabcontent">
+                        <h4>Auszubildender</h4>
+                        <h5>2009 - 2013</h5>
+                        <p>Die Axpo Informatik AG wurde mittlerweile an die GIA verkauft und heisst nun 'aveniq'. 
+                            In meiner Lehre hatte ich die Möglichkeit alle Bereiche der Systemtechnik zu durchlaufen.
+                            In dieser Zeit konnte ich mir ein Verständnis für die Disziplinen rund um die Entwicklung verschaffen.
+                            Zudem durfte ich merken, was es bedeutet ein vollumfänglicher IT-Dienstleister zu sein. 
+
+                            <ul>
+                                <li>Im Support die Problemstellungen der Kunden erkennen und zu Formulieren hilft mir heute noch beim Ausarbeiten von Anforderungen an IT-Systeme</li>
+                                <li>Das Client-Engineering brachte mir ein Verständnis für Betriebssysteme, was in meinen Augen für jeden Entwickler wichtig ist.</li>
+                                <li>Als Mitarbeiter in der Data Platform Abteilung durfte ich miterleben, wie ein Rechenzenter funktioniert und was es bedeutet eines auf trab zu halten</li>
+                                <li>Im Netzwerk-Team durfte ich lernen wie das Internet funktioniert und wie eins gesichertes Business-Netzwerk aufgebaut ist</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h3>03.</h3>
+            <h3>Arbeite mit mir!</h3>
+        </section>
+
+
+        <!-- Socials and Contacts -->
+        <div class="email-me"><a href="mailto:roman.meier.rm@gmail.com">roman.meier.rm@gmail.com</a></div>
+
+        <svg id="connect-with-me" class="connect-with-me" xmlns="http://www.w3.org/2000/svg" role="img"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path
+                d="M11 14H9c0-4.97 4.03-9 9-9v2c-3.87 0-7 3.13-7 7zm7-3V9c-2.76 0-5 2.24-5 5h2c0-1.66 1.34-3 3-3zM7 4c0-1.11-.89-2-2-2s-2 .89-2 2 .89 2 2 2 2-.89 2-2zm4.45.5h-2C9.21 5.92 7.99 7 6.5 7h-3C2.67 7 2 7.67 2 8.5V11h6V8.74c1.86-.59 3.25-2.23 3.45-4.24zM19 17c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm1.5 1h-3c-1.49 0-2.71-1.08-2.95-2.5h-2c.2 2.01 1.59 3.65 3.45 4.24V22h6v-2.5c0-.83-.67-1.5-1.5-1.5z">
+            </path>
+        </svg>
+
+        <div id="socials-icon-container" class="socials-icon-container">
+            <a href="https://www.linkedin.com/in/roman-meier-8b5b12115/" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>LinkedIn</title>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+
+            <a href="https://github.com/mauravan" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>GitHub</title>
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+
+            <a href="mailto:roman.meier.rm@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>Mail</title>
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <script src="roman.js"></script>
+
+</body>
+
 </html>
