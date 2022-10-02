@@ -200,8 +200,7 @@ main {
 }
 
 main>section {
-    min-height: 65vh;
-    margin-bottom: 50%;
+    margin-bottom: 35%;
 }
 
 main section:not(:nth-of-type(1)) {
@@ -274,7 +273,7 @@ main .section-content .image-wrapper {
 
 main .section-content .image-wrapper>div {
     position: relative;
-    height: 197px;
+    height: 196px;
     top: -50px;
     margin: 0;
     background-color: var(--accent-color);
