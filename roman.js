@@ -1,3 +1,9 @@
+// Scroll Line
+const scrollLine = document.getElementById("scroll-line");
+
+var scrollInterval1 = setInterval(() => scrollLine.style.opacity = "1", 1000)
+var scrollInterval2 = setInterval(() => scrollLine.style.opacity = "0", 6000)
+
 // Navbar Visibility
 // Sections Visibity
 const sections = document.getElementsByTagName('section');
@@ -7,7 +13,12 @@ const navbarHeight = '-' + getComputedStyle(document.documentElement).getPropert
 let prevScrollpos = window.pageYOffset;
 
 window.onscroll = () => {
+    // Scroll-line
+    clearInterval(scrollInterval1);
+    clearInterval(scrollInterval2);
+    scrollLine.style.opacity = '0';
 
+    // visibility of sections
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("nav").style.top = bodyMargin;
@@ -42,11 +53,27 @@ burgerOpenIcon.onclick = () => {
 const socialsContainer = document.getElementById("socials-icon-container")
 const connectWithMe = document.getElementById("connect-with-me")
 
-connectWithMe.onmouseover = () => { socialsContainer.style.opacity = '1'; socialsContainer.style.pointerEvents = 'all' }
-connectWithMe.onmouseout = () => { socialsContainer.style.opacity = '0';; socialsContainer.style.pointerEvents = 'none' }
+var lastTimeoutId;
 
-socialsContainer.onmouseover = () => { socialsContainer.style.opacity = '1'; socialsContainer.style.pointerEvents = 'all' }
-socialsContainer.onmouseout = () => { socialsContainer.style.opacity = '0'; socialsContainer.style.pointerEvents = 'none' }
+connectWithMe.onmouseover = () => {
+    clearTimeout(lastTimeoutId)
+    socialsContainer.style.opacity = '1';
+    socialsContainer.style.pointerEvents = 'all'
+}
+connectWithMe.onmouseout = () => {
+    socialsContainer.style.opacity = '0';
+    lastTimeoutId = setTimeout(() => socialsContainer.style.pointerEvents = 'none', 1000)
+}
+
+socialsContainer.onmouseover = () => {
+    clearTimeout(lastTimeoutId)
+    socialsContainer.style.opacity = '1';
+    socialsContainer.style.pointerEvents = 'all'
+}
+socialsContainer.onmouseout = () => {
+    socialsContainer.style.opacity = '0';
+    lastTimeoutId = setTimeout(() => socialsContainer.style.pointerEvents = 'none', 1000)
+}
 
 // compass
 const north = document.getElementById("north")

@@ -141,7 +141,7 @@ nav>svg {
     color: inherit;
 }
 
-@media screen and (max-width: 790px) {
+@media only screen and (max-width: 790px) {
     nav>svg#hamburger {
         display: block;
     }
@@ -153,19 +153,39 @@ nav>svg {
     .compass {
         display: none !important;
     }
+
+    main {
+        max-width: 100%!important;
+    }
+
+    main p {
+        max-width: 100%;
+    }
+
+    .tab-contianer {
+        flex-direction: column;
+    }
 }
 
-@media screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .section-content {
         flex-direction: column;
     }
 }
 
-@media screen and (max-height: 440px) and (max-width: 790px) {
+@media only screen and (max-height: 440px) and (max-width: 790px) {
     .email-me {
         display: none !important;
     }
 }
+
+
+@media only screen and (max-height: 1100px) {
+    main>section {
+        min-height: 90vh !important;
+    }
+}
+
 
 main {
     margin: 0 90px;
@@ -175,7 +195,8 @@ main {
 }
 
 main>section {
-    min-height: 80vh;
+    min-height: 65vh;
+    margin-bottom: 50%;
 }
 
 main section:not(:nth-of-type(1)) {
@@ -269,6 +290,62 @@ main .section-content img:hover {
     opacity: 1;
     transition: opacity .25s linear;
     will-change: opacity;
+}
+
+.section-experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: end;
+}
+
+.contact-section>div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-link {
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 16px;
+    color: var(--primary-font-color);
+    margin-top: 32px;
+}
+
+.build-by {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 8px;
+
+}
+
+.build-by>p {
+    padding: 4px;
+    margin: 0;
+    font-size: small;
+}
+
+.scroll-line {
+    opacity: 0;
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    height: 150px;
+    border-left: 1px solid var(--accent-color);
+    transition: opacity 1s;
+}
+
+.scroll-line span {
+    position: relative;
+    top: -10px;
+    left: 20px;
+    color: var(--accent-color);
 }
 
 /* TABLIST WORK */
