@@ -156,6 +156,7 @@ nav>svg {
 
     main {
         max-width: 100%!important;
+        padding: 8px;
     }
 
     main p {
