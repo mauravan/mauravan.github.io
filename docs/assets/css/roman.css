@@ -63,7 +63,7 @@ nav>ol>li {
     margin: 5px 12.5px;
 }
 
-nav>ol>li::before {
+nav>ol>li:not(:last-of-type)::before {
     content: "0"counter(item) ".";
     margin-right: 5px;
     color: var(--primary-font-color);
@@ -77,6 +77,19 @@ nav>ol>li>a {
 
 nav>ol>li>a:hover {
     color: var(--primary-font-color);
+}
+
+nav>ol>li:last-of-type>a {
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid var(--accent-color);
+    padding: 16px;
+    border-radius: 5px;
+    margin-left: 16px;
+}
+
+nav>ol>li:last-of-type>a:last-of-type:hover {
+    background-color: var(--accent-color);
 }
 
 nav>svg {
@@ -117,19 +130,37 @@ nav>svg {
     list-style: none;
 }
 
-.sidebar>ol>li {
+.sidebar>ol>li:not(:last-of-type) {
     font-size: large;
     counter-increment: item;
     margin: 15px 0;
     list-style: none;
 }
 
-.sidebar>ol li::before {
+.sidebar>ol li:not(:last-of-type)::before {
     content: "0"counter(item) ".";
     margin-right: 5px;
     color: var(--primary-font-color);
     text-align: right;
 }
+
+.sidebar>ol>li:last-of-type>a {
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid var(--accent-color);
+    background-color: var(--secondary-bg-color);
+    padding: 16px;
+    border-radius: 5px;
+    position: relative;
+    top: 32px;
+    margin: 32px;
+}
+
+.sidebar>ol>li:last-of-type>a:hover {
+    background-color: var(--accent-color);
+}
+
+
 
 .sidebar a {
     text-decoration: none;
@@ -140,6 +171,7 @@ nav>svg {
     text-decoration: none;
     color: inherit;
 }
+
 
 @media only screen and (max-width: 790px) {
     nav>svg#hamburger {
@@ -317,8 +349,13 @@ main .section-content img:hover {
     border: 2px solid var(--accent-color);
     border-radius: 5px;
     padding: 16px;
-    color: var(--primary-font-color);
     margin-top: 32px;
+    color: unset;
+}
+
+.contact-link:hover {
+    color: unset;
+    background-color: var(--accent-color);
 }
 
 .build-by {

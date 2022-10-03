@@ -43,11 +43,24 @@ const sidebar = document.getElementById("sidebar")
 burgerIcon.onclick = () => {
     burgerOpenIcon.style.display = 'block';
     sidebar.style.width = '300px';
+
+    setTimeout(() => {
+        window.onclick = (event) => {
+            const clickWasOutsideNavigation = !sidebar.contains(event.target);
+        
+            if (clickWasOutsideNavigation) {
+                burgerOpenIcon.onclick();
+            }
+        }
+    });
 }
 burgerOpenIcon.onclick = () => {
     burgerOpenIcon.style.display = 'none';
     sidebar.style.width = '0';
+    window.onclick = undefined;
 }
+
+
 
 // Socials visibility
 const socialsContainer = document.getElementById("socials-icon-container")
