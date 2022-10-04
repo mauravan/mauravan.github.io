@@ -673,3 +673,29 @@ main .section-content img:hover {
     background-color: #cfb53b;
     border: 3px solid black;
 }
+
+.compass .letter-north {
+    position: absolute;
+    top: -50px;
+    font-size: 25px;
+    transition: font-size 1.5s cubic-bezier(0,.97,.5,1);
+    border-radius: 50%;
+}
+.compass .letter-east {
+    position: absolute;
+    right: -50px;
+    font-size: 25px;
+    transition: font-size 1.5s cubic-bezier(0,.97,.5,1);
+}
+.compass .letter-south {
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    transition: font-size 1.5s cubic-bezier(0,.97,.5,1);
+}
+.compass .letter-west {
+    position: absolute;
+    left: -50px;
+    font-size: 25px;
+    transition: font-size 1.5s cubic-bezier(0,.97,.5,1);
+}
