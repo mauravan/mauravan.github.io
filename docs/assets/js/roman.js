@@ -7,7 +7,6 @@ var scrollInterval2 = setInterval(() => scrollLine.style.opacity = "0", 6000)
 // Navbar Visibility
 // Sections Visibity
 const sections = document.getElementsByTagName('section');
-const bodyMargin = getComputedStyle(document.documentElement).getPropertyValue('--body-margin');
 const navbarHeight = '-' + getComputedStyle(document.documentElement).getPropertyValue('--navbar-height').trim();
 
 let prevScrollpos = window.pageYOffset;
@@ -21,7 +20,7 @@ window.onscroll = () => {
     // visibility of sections
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("nav").style.top = bodyMargin;
+        document.getElementById("nav").style.top = '20px';
     } else {
         document.getElementById("nav").style.top = navbarHeight;
     }

@@ -30,8 +30,8 @@ body {
 nav {
     position: fixed;
     transition: top 0.3s;
+    top: calc(2 * var(--body-margin));
     z-index: 10;
-    padding: var(--body-margin);
     right: calc(4 * var(--body-margin));
 
     display: flex;
