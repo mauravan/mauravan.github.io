@@ -60,6 +60,8 @@ burgerOpenIcon.onclick = () => {
     window.onclick = undefined;
 }
 
+const links = document.querySelectorAll('.sidebar a');
+links.forEach(l => l.onclick = burgerOpenIcon.onclick)
 
 
 // Socials visibility
