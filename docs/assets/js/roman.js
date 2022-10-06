@@ -4,6 +4,42 @@ const scrollLine = document.getElementById("scroll-line");
 var scrollInterval1 = setInterval(() => scrollLine.style.opacity = "1", 1000)
 var scrollInterval2 = setInterval(() => scrollLine.style.opacity = "0", 6000)
 
+// Skills
+const skillsParent = document.getElementById('skills');
+
+var skills = {
+    "java": 80,
+    "javascript": 75,
+    "html": 70,
+    "css": 60,
+}
+
+Object.entries(skills).forEach(([skillName, percentage]) => {
+    let container = document.createElement('div');
+    container.classList.add('skill-container')
+
+    let skillbar = document.createElement('div');
+    skillbar.classList.add('skill-bar');
+    skillbar.id = skillName;
+    
+    let percentageText = document.createElement('span')
+    percentageText.innerText = percentage + "%";
+
+    container.appendChild(percentageText)
+    
+    let text = document.createElement('div')
+    text.classList.add('skill-name')
+    text.innerText = skillName;
+
+    let left = document.createElement('div');
+    left.appendChild(skillbar)
+    left.appendChild(text)
+
+    container.appendChild(left)
+
+    skillsParent.appendChild(container);
+});
+
 // Navbar Visibility
 // Sections Visibity
 const sections = document.getElementsByTagName('section');
@@ -30,6 +66,12 @@ window.onscroll = () => {
         if (isElementStartingToBeInViewport(section, 175)) {
             section.style.opacity = 1;
         }
+    }
+
+    if(isElementStartingToBeInViewport(skillsParent, 50)) {
+        skillsParent.querySelectorAll('.skill-bar').forEach((bar) => {
+            bar.style.width = skills[bar.id] + '%';
+        })
     }
 
 }
@@ -177,3 +219,4 @@ function openWorkplace(evt, workplace) {
 
 
 document.getElementById("defaultOpen").click();
+

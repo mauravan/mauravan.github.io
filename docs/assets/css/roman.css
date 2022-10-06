@@ -2,7 +2,7 @@
     --main-bg-color: #03A062;
     --secondary-bg-color: black;
     --primary-font-color: #A11D03;
-    --secondary-font-color: #6E6A69;
+    --secondary-font-color: #015433;
     --accent-color: #540E00;
 
     --body-margin: 10px;
@@ -208,6 +208,11 @@ nav>svg {
     .section-content {
         flex-direction: column;
     }
+
+    .skills {
+        width: 100%!important;
+        right: 0!important;
+    }
 }
 
 @media only screen and (max-height: 440px) and (max-width: 790px) {
@@ -298,7 +303,7 @@ main .section-content ul li::before {
 main .section-content .image-wrapper {
     box-sizing: content-box;
     padding: 0 50px;
-    margin-top: 250px;
+    margin-top: 110px;
     border: 4px solid var(--accent-color);
     align-self: center;
 }
@@ -458,6 +463,52 @@ main .section-content img:hover {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+
+/* SKILLS */
+.skills {
+    position: relative;
+    padding: 32px;
+    border: 4px solid var(--accent-color);
+    width: 100%;
+    right: 26%;
+}
+
+.skill-container {
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    color: var(--main-bg-color); 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.skill-container > div {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    justify-content: flex-end;
+}
+
+.skill-name {
+    width: 20%;
+    background-color: var(--secondary-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-bar {
+    background-color: var(--main-bg-color);
+    height: 24px;
+    color: var(--secondary-bg-color);
+    transition: width 2s;
+    transition-delay: 1s;
+    width: 0;
+}
+
+.skill-bar > span {
+    background-color: var(--secondary-font-color);    
 }
 
 /* EMAIL ADDRESS */
