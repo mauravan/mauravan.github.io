@@ -1,4 +1,5 @@
 // Scroll Line
+// TODO: Can be done with animation
 const scrollLine = document.getElementById("scroll-line");
 
 var scrollInterval1 = setInterval(() => scrollLine.style.opacity = "1", 1000)
@@ -45,7 +46,7 @@ Object.entries(skills).forEach(([skillName, percentage]) => {
 const sections = document.getElementsByTagName('section');
 const navbarHeight = '-' + getComputedStyle(document.documentElement).getPropertyValue('--navbar-height').trim();
 
-let prevScrollpos = window.pageYOffset;
+let prevScrollpos = window.scrollY;
 
 window.onscroll = () => {
     // Scroll-line
@@ -94,11 +95,15 @@ burgerIcon.onclick = () => {
             }
         }
     });
+
+    burgerIcon.style.display = 'none'
 }
 burgerOpenIcon.onclick = () => {
     burgerOpenIcon.style.display = 'none';
     sidebar.style.width = '0';
     window.onclick = undefined;
+
+    burgerIcon.style.display = 'block'
 }
 
 const links = document.querySelectorAll('.sidebar a');

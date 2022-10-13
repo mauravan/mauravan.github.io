@@ -12,16 +12,19 @@
 </head>
 
 <body>
-    <a href="#top">
-        <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M7 40q-1.2 0-2.1-.9Q4 38.2 4 37V11q0-1.2.9-2.1Q5.8 8 7 8h34q1.2 0 2.1.9.9.9.9 2.1v26q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h34V15.2H7V37Zm8-3.6-2.1-2.1 5.15-5.2-5.2-5.2L15 18.8l7.3 7.3Zm9.5.2v-3h11v3Z"/></svg>
-            <div class="line"></div>
-            <span>ROMANMEIER</span>
+    <div class="reveal"></div>
+    <a href="#top" id="logowrapper" class="logowrapper initial">
+        <div class="logo initial" id="logo">
+            <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M7 40q-1.2 0-2.1-.9Q4 38.2 4 37V11q0-1.2.9-2.1Q5.8 8 7 8h34q1.2 0 2.1.9.9.9.9 2.1v26q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h34V15.2H7V37Zm8-3.6-2.1-2.1 5.15-5.2-5.2-5.2L15 18.8l7.3 7.3Zm9.5.2v-3h11v3Z"/></svg>
+            <div id="logo-line" class="line"></div>
+            <div id="logo-name" class="logo-name">
+                <span>ROMANMEIER</span>
+            </div>
         </div>
     </a>
     <nav id="nav">
         <ol type="i">
-            <li><a href="#about">Über</a>
+            <li><a href="#about">&Uuml;ber</a>
             <li><a href="#experience">Erfahrung</a>
             <li><a href="#contact">Kontakt</a>
             <li><a href="/docs/assets/files/resume_roman_meier.pdf" download>Resume</a>
@@ -30,15 +33,15 @@
             stroke="currentColor">
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
         </svg>
-        <div id="sidebar" class="sidebar">
-            <svg id="hamburger-open" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor">
-                <path
+        <svg id="hamburger-open" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor">
+            <path
                     d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z">
-                </path>
-            </svg>
+            </path>
+        </svg>
+        <div id="sidebar" class="sidebar">
             <ol type="i">
-                <li><a href="#about">Über</a></li>
+                <li><a href="#about">&Uuml;ber</a></li>
                 <li><a href="#experience">Erfahrung</a></li>
                 <li><a href="#contact">Kontakt</a></li>
                 <li><a href="/docs/assets/files/resume_roman_meier.pdf" download>Resume</a></li>
@@ -49,7 +52,7 @@
         <section>
             <h1>Roman Meier</h1>
             <h2>Software Ingenieur und Consultant.</h2>
-            <p>Grüezi! Mit Technologien, die auf <b>Java</b> und <b>JavaScript</b> basieren,
+            <p>Gr&uuml;ezi! Mit Technologien, die auf <b>Java</b> und <b>JavaScript</b> basieren,
                 helfe ich Menschen enterprise-grade <b>Web-Applikationen</b> zu bauen,
                 die einen echten <b>Mehrwert</b> bringen</p>
 
@@ -76,7 +79,7 @@
         <section id="about">
             <div>
                 <h3>01.</h3>
-                <h3>Über mich</h3>
+                <h3>&Uuml;ber mich</h3>
             </div>
             <div class="section-content">
                 <div>
@@ -137,11 +140,11 @@
                         <ul>
                             <li>Entwicklung und Planung diverser Teile der Applikation im Java Backend sowie React
                                 Frontend</li>
-                            <li>Eigenständige Umsetzung einer Applikation, die aus XSD Schema Definitionen Formulare
+                            <li>Eigenst&auml;ndige Umsetzung einer Applikation, die aus XSD Schema Definitionen Formulare
                                 generiert</li>
                             <li>Optimierung des XML Standards</li>
                             <li>Betrieb der Applikationen bei den Kunden und Support im 3 Level</li>
-                            <li>Hier konnte ich mit umfassendes Wissen über XML und XSLT Prozessoren aneignen und
+                            <li>Hier konnte ich mir umfassendes Wissen über XML und XSLT Prozessoren aneignen und
                                 erfolgreich zur Anwendung bringen</li>
                         </ul>
                         </p>
@@ -157,7 +160,7 @@
                             <li>Neuentwicklung des Frontends einer E-Banking Applikation.
                                 In einem Team von 4 Entwicklern konnten wir innerhalb eines Jahres ein komplettes
                                 Banking-Frontend mit Dashboard entwickeln.
-                                Dabei konnte ich mit umfassendes Browser-Wissen aneignen.
+                                Dabei konnte ich mir umfassendes Browser-Wissen aneignen.
                             </li>
                             <li>
                                 Für eine Schweizer Versicherung haben wir ein Kundenportal erarbeitet und umbesetzt.
@@ -166,7 +169,7 @@
                                 Arbeit in einem grossen Team von Entwicklern sammeln.
                             </li>
                             <li>
-                                Für die selbe Versicherung durfte ich in der Realisierung eines neuen BVG-Portals
+                                Für dieselbe Versicherung durfte ich in der Realisierung eines neuen BVG-Portals
                                 mithelfen.
                                 Hier kam ich das erste Mal mit einer Microservice-Architektur und Technologien wie
                                 Openshift, Kafka und Camunda in Kontakt.
@@ -181,17 +184,17 @@
                             In meiner Lehre hatte ich die Möglichkeit alle Bereiche der Systemtechnik zu durchlaufen.
                             In dieser Zeit konnte ich mir ein Verständnis für die Disziplinen rund um die Entwicklung
                             verschaffen.
-                            Zudem durfte ich merken, was es bedeutet ein vollumfänglicher IT-Dienstleister zu sein.
+                            Zudem durfte ich merken, was es bedeutet ein vollumf&auml;nglicher IT-Dienstleister zu sein.
 
                         <ul>
-                            <li>Im Support die Problemstellungen der Kunden erkennen und zu Formulieren hilft mir heute
+                            <li>Im Support die Problemstellungen der Kunden erkennen und zu formulieren hilft mir heute
                                 noch beim Ausarbeiten von Anforderungen an IT-Systeme</li>
-                            <li>Das Client-Engineering brachte mir ein Verständnis für Betriebssysteme, was in meinen
+                            <li>Das Client-Engineering brachte mir ein Verst&auml;ndnis für Betriebssysteme, was in meinen
                                 Augen für jeden Entwickler wichtig ist.</li>
                             <li>Als Mitarbeiter in der Data Platform Abteilung durfte ich miterleben, wie ein
-                                Rechenzenter funktioniert und was es bedeutet eines auf trab zu halten</li>
-                            <li>Im Netzwerk-Team durfte ich lernen wie das Internet funktioniert und wie eins
-                                gesichertes Business-Netzwerk aufgebaut ist</li>
+                                Rechenzentrum funktioniert und was es bedeutet eines auf trab zu halten</li>
+                            <li>Im Netzwerk-Team erhielt ich Einblick in die Funktionsweise des Internets und wie ein
+                                gesichertes Business-Netzwerk aufgebaut werden kann</li>
                         </ul>
                         </p>
                     </div>
@@ -206,12 +209,11 @@
                 </div>
                 <p>
                     Momentan bin ich zwar nicht auf der Suche nach neuen Herausforderungen,
-                    aber wenn du eine Idee oder ein Projekt hast und kompetente Hilfe bei der Umsetzung benötigst,
-                    dann zögere nicht, dich bei mir zu melden.</p>
+                    aber wenn du eine Idee oder ein Projekt hast und kompetente Hilfe bei der Umsetzung ben&ouml;tigst,
+                    dann z&ouml;gere nicht, dich bei mir zu melden.</p>
                 <a class="contact-link" href="mailto:roman.meier.rm@gmail.com">Hast du eine Frage?</a>
             </div>
         </section>
-
 
         <!-- Socials and Contacts -->
         <div class="email-me"><a href="mailto:roman.meier.rm@gmail.com">roman.meier.rm@gmail.com</a></div>
@@ -263,7 +265,9 @@
             <span>SCROLL</span>
         </div>
 
-        <script src="docs/assets/js/roman.js"></script>
+    </main>
+
+    <script src="docs/assets/js/roman.js"></script>
 
 </body>
 
