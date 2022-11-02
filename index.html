@@ -12,17 +12,13 @@
 </head>
 
 <body>
-    <div class="reveal"></div>
-    <a href="#top" id="logowrapper" class="logowrapper initial">
-        <div class="logo initial" id="logo">
-            <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M7 40q-1.2 0-2.1-.9Q4 38.2 4 37V11q0-1.2.9-2.1Q5.8 8 7 8h34q1.2 0 2.1.9.9.9.9 2.1v26q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h34V15.2H7V37Zm8-3.6-2.1-2.1 5.15-5.2-5.2-5.2L15 18.8l7.3 7.3Zm9.5.2v-3h11v3Z"/></svg>
-            <div id="logo-line" class="line"></div>
-            <div id="logo-name" class="logo-name">
-                <span>ROMANMEIER</span>
-            </div>
-        </div>
-    </a>
     <nav id="nav">
+        <a href="#top" id="logowrapper" class="logowrapper initial">
+            <div class="logo" id="logo">
+                <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M7 40q-1.2 0-2.1-.9Q4 38.2 4 37V11q0-1.2.9-2.1Q5.8 8 7 8h34q1.2 0 2.1.9.9.9.9 2.1v26q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h34V15.2H7V37Zm8-3.6-2.1-2.1 5.15-5.2-5.2-5.2L15 18.8l7.3 7.3Zm9.5.2v-3h11v3Z"/></svg>
+            </div>
+        </a>
+
         <ol type="i">
             <li><a href="#about">&Uuml;ber</a>
             <li><a href="#experience">Erfahrung</a>
@@ -49,73 +45,50 @@
         </div>
     </nav>
     <main>
-        <section>
-            <h1>Roman Meier</h1>
-            <h2>Software Ingenieur und Consultant.</h2>
-            <p>Gr&uuml;ezi! Mit Technologien, die auf <b>Java</b> und <b>JavaScript</b> basieren,
-                helfe ich Menschen enterprise-grade <b>Web-Applikationen</b> zu bauen,
-                die einen echten <b>Mehrwert</b> bringen</p>
-
-            <div class="compass" id="compass">
-                <div>
-                    <div class="letter-north" id="letter-north">N</div>
-                    <div class="letter-east" id="letter-east">E</div>
-                    <div class="letter-south" id="letter-south">S</div>
-                    <div class="letter-west" id="letter-west">W</div>
-                    <div class="needle-north-west needle"></div>
-                    <div class="needle-north-east needle"></div>
-                    <div class="needle-south-west needle"></div>
-                    <div class="needle-south-east needle"></div>
-                    <div class="needle-north needle"></div>
-                    <div class="needle-south needle"></div>
-                    <div class="needle-east needle"></div>
-                    <div class="needle-west needle"></div>
-                    <div id="north" class="compass-needle-north"></div>
-                    <div id="south" class="compass-needle-south"></div>
-                    <div id="pin" class="compass-pin"></div>
-                </div>
+        <section id="title">
+            <div>
+                <h1>Roman Meier</h1>
+                <h2>Software Ingenieur und Consultant.</h2>
+            </div>
+            <div>
+                <p>Gr&uuml;ezi! Mit Technologien, die auf <b>Java</b> und <b>JavaScript</b> basieren,
+                    helfe ich Menschen enterprise-grade <b>Web-Applikationen</b> zu bauen,
+                    die einen echten <b>Mehrwert</b> bringen</p>
             </div>
         </section>
-        <section id="about">
+        <section id="about" class="about">
             <div>
                 <h3>01.</h3>
                 <h3>&Uuml;ber mich</h3>
             </div>
-            <div class="section-content">
-                <div>
-                    <p>Meine Begeisterung für Technologie begann bereits in meiner Kindheit,
+            <div>
+                    <p>Meine Begeisterung f&uuml;r Technologie begann bereits in meiner Kindheit,
                         als mein Vater mir und meinen Geschwistern den ersten Computer mit Windows 95
-                        und einige Spiele dafür nach Hause brachte. Das Ganze hat mir so viel Spass gemacht,
+                        und einige Spiele daf&uuml;r nach Hause brachte. Das Ganze hat mir so viel Spass gemacht,
                         dass ich 2009 eine Berufslehre als Systemtechniker absolvierte.
-                        Das Interesse für die Applikations-Entwicklug kam dann im Studium an der <a
+                        Das Interesse f&uuml;r die Applikations-Entwicklug kam dann im Studium an der <a
                             href="https://www.fhnw.ch/de/">FHNW</a> noch dazu.
-                        Mittlerweile konnte ich bereits für ein <a href="https://youengineering.ch/">kleines
+                        Mittlerweile konnte ich bereits f&uuml;r ein <a href="https://youengineering.ch/">kleines
                             Startup</a>,
-                        eine <a href="https://www.ti8m.com/">grössere Unternehmung</a> sowie deren Kunden verschiedene
-                        Projekte umsetzen.</p>
-                    <p>Abgesehen von Technologie liebe ich Sport, das Backen von Sauerteig-Broten und das Verbringen von
+                        eine <a href="https://www.ti8m.com/">gr&ouml;ssere Unternehmung</a> sowie deren Kunden verschiedene
+                        Projekte umsetzen.
+                        Abgesehen von Technologie liebe ich Sport, das Backen von Sauerteig-Broten und das Verbringen von
                         Zeit mit meinen Liebsten.</p>
-
-                    <p>Hier sind einige Technologien, die ich verwende:</p>
-                    <ul>
-                        <li>Java, Spring, Quarkus</li>
-                        <li>TypeScript, React, Node.js</li>
-                        <li>HTML, CSS, SCSS</li>
-                        <li>Docker, OpenShift, Azure</li>
-                        <li>Maven, Gradle, NPM</li>
-                        <li>Intellij IDEA, VSCode</li>
-                    </ul>
-                    <div class="skills" id="skills"></div>
-                </div>
-                <div class="image-wrapper">
-                    <div>
-                        <img src="docs/assets/images/gipsy.jpeg" width="350px">
-                    </div>
-                </div>
             </div>
+            <div class="technologies">
+                <span>Hier sind einige Technologien, die ich verwende:</span>
+                <ul>
+                    <li>Java, Spring, Quarkus</li>
+                    <li>TypeScript, React, Node.js</li>
+                    <li>HTML, CSS, SCSS</li>
+                    <li>Docker, OpenShift, Azure</li>
+                    <li>Maven, Gradle, NPM</li>
+                    <li>Intellij IDEA, VSCode</li>
+                </ul>
+            </div>
+            <div class="skills" id="skills"></div>
         </section>
-
-        <section class="section-experience" id="experience">
+        <section id="experience">
             <div>
                 <h3>02.</h3>
                 <h3>Bisherige Erfahrung</h3>
@@ -135,7 +108,7 @@
                         <h4>Professional Software Engineer</h4>
                         <h5>2020 - jetzt</h5>
                         <p>
-                            Seit 2020 darf ich für die Ti&m und die SASIS AG am <a href="https://ship-standard.ch/"
+                            Seit 2020 darf ich f&uuml;r die Ti&m und die SASIS AG am <a href="https://ship-standard.ch/"
                                 target="_blank">SHIP-Standard</a> mitarbeiten.
                         <ul>
                             <li>Entwicklung und Planung diverser Teile der Applikation im Java Backend sowie React
@@ -144,7 +117,7 @@
                                 generiert</li>
                             <li>Optimierung des XML Standards</li>
                             <li>Betrieb der Applikationen bei den Kunden und Support im 3 Level</li>
-                            <li>Hier konnte ich mir umfassendes Wissen über XML und XSLT Prozessoren aneignen und
+                            <li>Hier konnte ich mir umfassendes Wissen &uuml;ber XML und XSLT Prozessoren aneignen und
                                 erfolgreich zur Anwendung bringen</li>
                         </ul>
                         </p>
@@ -163,13 +136,13 @@
                                 Dabei konnte ich mir umfassendes Browser-Wissen aneignen.
                             </li>
                             <li>
-                                Für eine Schweizer Versicherung haben wir ein Kundenportal erarbeitet und umbesetzt.
+                                F&uuml;r eine Schweizer Versicherung haben wir ein Kundenportal erarbeitet und umbesetzt.
                                 Hier durfte ich erstmal mit Angular 2+
                                 verwenden sowie mein Frontend wissen erweitern. Zudem konnte ich Erfahrung mit der
                                 Arbeit in einem grossen Team von Entwicklern sammeln.
                             </li>
                             <li>
-                                Für dieselbe Versicherung durfte ich in der Realisierung eines neuen BVG-Portals
+                                F&uuml;r dieselbe Versicherung durfte ich in der Realisierung eines neuen BVG-Portals
                                 mithelfen.
                                 Hier kam ich das erste Mal mit einer Microservice-Architektur und Technologien wie
                                 Openshift, Kafka und Camunda in Kontakt.
@@ -181,16 +154,16 @@
                         <h4>Auszubildender</h4>
                         <h5>2009 - 2013</h5>
                         <p>Die Axpo Informatik AG wurde mittlerweile an die GIA verkauft und heisst nun 'aveniq'.
-                            In meiner Lehre hatte ich die Möglichkeit alle Bereiche der Systemtechnik zu durchlaufen.
-                            In dieser Zeit konnte ich mir ein Verständnis für die Disziplinen rund um die Entwicklung
+                            In meiner Lehre hatte ich die M&ouml;glichkeit alle Bereiche der Systemtechnik zu durchlaufen.
+                            In dieser Zeit konnte ich mir ein Verst&auml;ndnis f&uuml;r die Disziplinen rund um die Entwicklung
                             verschaffen.
                             Zudem durfte ich merken, was es bedeutet ein vollumf&auml;nglicher IT-Dienstleister zu sein.
 
                         <ul>
                             <li>Im Support die Problemstellungen der Kunden erkennen und zu formulieren hilft mir heute
                                 noch beim Ausarbeiten von Anforderungen an IT-Systeme</li>
-                            <li>Das Client-Engineering brachte mir ein Verst&auml;ndnis für Betriebssysteme, was in meinen
-                                Augen für jeden Entwickler wichtig ist.</li>
+                            <li>Das Client-Engineering brachte mir ein Verst&auml;ndnis f&uuml;r Betriebssysteme, was in meinen
+                                Augen f&uuml;r jeden Entwickler wichtig ist.</li>
                             <li>Als Mitarbeiter in der Data Platform Abteilung durfte ich miterleben, wie ein
                                 Rechenzentrum funktioniert und was es bedeutet eines auf trab zu halten</li>
                             <li>Im Netzwerk-Team erhielt ich Einblick in die Funktionsweise des Internets und wie ein
@@ -258,17 +231,14 @@
         </div>
 
         <div class="build-by">
-            <p>ROMAN MEIER ©2022</p>
+            <p>ROMAN MEIER &copy;2022</p>
         </div>
 
         <div id="scroll-line" class="scroll-line">
             <span>SCROLL</span>
         </div>
-
     </main>
 
     <script src="docs/assets/js/roman.js"></script>
-
 </body>
-
 </html>

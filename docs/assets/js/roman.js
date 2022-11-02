@@ -10,7 +10,9 @@ const skillsParent = document.getElementById('skills');
 
 var skills = {
     "java": 80,
+    "spring": 80,
     "javascript": 75,
+    "react": 70,
     "html": 70,
     "css": 60,
 }
@@ -57,7 +59,7 @@ window.onscroll = () => {
     // visibility of sections
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("nav").style.top = '20px';
+        document.getElementById("nav").style.top = '0px';
     } else {
         document.getElementById("nav").style.top = navbarHeight;
     }
@@ -136,58 +138,8 @@ socialsContainer.onmouseout = () => {
     lastTimeoutId = setTimeout(() => socialsContainer.style.pointerEvents = 'none', 1000)
 }
 
-// compass
-const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-
-const letterNorth = document.getElementById("letter-north")
-const letterEast = document.getElementById("letter-east")
-const letterSouth = document.getElementById("letter-south")
-const letterWest = document.getElementById("letter-west")
-
-const north = document.getElementById("north")
-var northpoints = north.getBoundingClientRect();
-var Xorigin = northpoints.left + (northpoints.width / 2)
-var Yorigin = northpoints.top + (northpoints.height)
-
-const south = document.getElementById("south")
-const compass = document.getElementById("compass")
-window.onmousemove = (e) => {
-    let Xmouse = e.pageX
-    let Ymouse = e.pageY
-
-    const firstAngle = Math.atan2(Ymouse - Yorigin, Xmouse - Xorigin) + 1.55;
-
-    north.style.transform = 'rotate(' + (firstAngle) + 'rad) translateY(-70px)'
-    south.style.transform = 'rotate(' + (Math.PI + firstAngle) + 'rad) translateY(-70px)'
-
-    
-    
-    let distanceNorth = getDistanceBetweenElementAndRotatingPoint(letterNorth)
-
-    letterNorth.style.fontSize = clamp(180 - distanceNorth, 25, 50) + 'px';
-    letterEast.style.fontSize = clamp(180 - getDistanceBetweenElementAndRotatingPoint(letterEast), 25, 50) + 'px';
-    letterSouth.style.fontSize = clamp(180 - getDistanceBetweenElementAndRotatingPoint(letterSouth), 25, 50) + 'px';
-    letterWest.style.fontSize = clamp(180 - getDistanceBetweenElementAndRotatingPoint(letterWest), 25, 50) + 'px';
-}
-
-function getDistanceBetweenElementAndRotatingPoint(element) {
-    let x1 = north.getBoundingClientRect().x + (north.getBoundingClientRect().width / 2)
-    let y1 = north.getBoundingClientRect().y + (north.getBoundingClientRect().height / 2)
-
-    let x2 = element.getBoundingClientRect().x;
-    let y2 = element.getBoundingClientRect().y;
-
-    let a = x1 - x2;
-    let b = y1 - y2;
-
-    return Math.hypot(a,b);
-}
-
 window.onresize = () => {
     sidebar.style.width = '0';
-    northpoints = north.getBoundingClientRect();
-    Xorigin = northpoints.left + (northpoints.width / 2)
-    Yorigin = northpoints.top + (northpoints.height)
 }
 
 
