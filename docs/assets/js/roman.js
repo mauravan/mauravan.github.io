@@ -1,9 +1,18 @@
-// Scroll Line
-// TODO: Can be done with animation
-const scrollLine = document.getElementById("scroll-line");
+const auraContainer = document.getElementById("aura");
 
-var scrollInterval1 = setInterval(() => scrollLine.style.opacity = "1", 1000)
-var scrollInterval2 = setInterval(() => scrollLine.style.opacity = "0", 6000)
+for (let i = 0; i < 20; i++) {
+    const initialShadow = `rgb(75, ${Math.random() * 255 + 100}, ${Math.random() * 255 + 60}) 0px 0px 100px 50px`
+
+    const aura = document.createElement('span');
+    aura.classList.add('aura');
+    aura.style.marginTop = (-Math.random() * 100) - 400 + 'px';
+    aura.style.boxShadow = initialShadow;
+    aura.style.animation = `topup ${Math.random() * 10000 + 3000}ms linear infinite`;
+    aura.style.borderRadius = `${Math.random() * 25}% ${Math.random() * 25}% ${Math.random() * 25}% ${Math.random() * 25}%`;
+    aura.setAttribute('initialShadow', initialShadow);
+
+    auraContainer.appendChild(aura)
+}
 
 // Skills
 const skillsParent = document.getElementById('skills');
@@ -50,11 +59,11 @@ const navbarHeight = '-' + getComputedStyle(document.documentElement).getPropert
 
 let prevScrollpos = window.scrollY;
 
+const scrollLine = document.getElementById("scroll-line");
+
 window.onscroll = () => {
     // Scroll-line
-    clearInterval(scrollInterval1);
-    clearInterval(scrollInterval2);
-    scrollLine.style.opacity = '0';
+    scrollLine.style.display = 'none'
 
     // visibility of sections
     let currentScrollPos = window.pageYOffset;
@@ -136,6 +145,27 @@ socialsContainer.onmouseover = () => {
 socialsContainer.onmouseout = () => {
     socialsContainer.style.opacity = '0';
     lastTimeoutId = setTimeout(() => socialsContainer.style.pointerEvents = 'none', 1000)
+}
+
+window.onmousemove = (e) => {
+    let Xmouse = e.pageX
+    let Ymouse = e.pageY
+
+    const Xright = Xmouse;
+    const Xtop = Ymouse;
+
+    Array.from(auraContainer.children).forEach((child) => {
+        const { left, right, top, bottom  } = child.getBoundingClientRect()
+
+        if (Xright > left && Xright < (left + 100) && Xtop > top && Xtop < bottom) {
+            if(child.classList.contains("aura")) {
+                child.style.boxShadow = `0px 0px 100px 50px rgb(${Math.random() * 40 + 200}, ${Math.random() * 160}, ${Math.random() * 40}) `;
+            }
+        } else {
+            child.style.boxShadow = child.getAttribute('initialShadow')
+        }
+
+    });
 }
 
 window.onresize = () => {

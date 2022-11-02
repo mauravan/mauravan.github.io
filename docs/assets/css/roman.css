@@ -31,6 +31,45 @@ body {
     align-items: center;
 }
 
+.aurora {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+
+    background-color: var(--main-bg-color);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aurora > div {
+    position: absolute;
+    z-index: 1;
+}
+
+
+@keyframes topup{
+    0%, 100% {transform:translatey(0);}
+    50% {transform:translatey(130px)}
+}
+
+.aura {
+    transform: skew(-0.06turn, 18deg);
+    display: block;
+    width: 0;
+    margin-left: 80px;
+    min-height: 70vh;
+    float: left;
+    opacity: 0.60;
+    transition: box-shadow 1s ease-out
+}
+
+
 /* LOGO */
 .logowrapper {
     width: 80px;
@@ -39,6 +78,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .logo {
@@ -195,7 +235,7 @@ main {
 }
 
 main > section {
-    margin-bottom: 35%;
+    margin-bottom: 100vh;
     font-size: xx-large;
 }
 
@@ -218,13 +258,16 @@ main > section h3:first-of-type {
 main h1 {
     margin: 0;
     font-size: clamp(100px, 8vw, 180px);
-    color: var(--secondary-font-color);
+    color: #F9F871;
+    opacity: 0.7;
 }
 
 main h2 {
     margin: 0;
     font-size: clamp(20px, 9vw, 50px);
     font-style: normal;
+    color: #F9F871;
+    opacity: 0.6;
 }
 
 main p {
@@ -314,21 +357,34 @@ main .about ul li::before {
     font-size: small;
 }
 
+
+@keyframes blink{
+    0% { opacity: 0; }
+    90% { opacity: 1; }
+    95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 .scroll-line {
-    opacity: 0;
+    z-index: 35;
+    opacity: 1;
     position: fixed;
     bottom: 0;
     left: 30%;
     height: 150px;
-    border-left: 1px solid var(--accent-color);
+    border-left: 1px solid #F9F871;
     transition: opacity 1s;
+
+    animation: 4s infinite alternate blink;
+
+    font-size: large;
 }
 
 .scroll-line span {
     position: relative;
     top: -10px;
     left: 20px;
-    color: var(--accent-color);
+    color: #F9F871;
 }
 
 /* TABLIST WORK */
@@ -539,129 +595,6 @@ main .about ul li::before {
 .socials-icon-container svg:hover {
     transform: translateY(-3px);
 }
-
-/* COMPASS */
-.compass {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: var(--secondary-bg-color);
-    border: 3px solid var(--accent-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.compass > div:first-of-type {
-    width: 290px;
-    height: 290px;
-    border-radius: 50%;
-    border: 3px dotted var(--accent-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.compass .needle {
-    position: absolute;
-    width: 100px;
-    height: 160px;
-    background: linear-gradient(90deg, var(--main-bg-color) 50%, var(--secondary-bg-color) 50%);
-    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
-}
-
-.compass .needle-north {
-    transform: translateY(-80px);
-}
-
-.compass .needle-east {
-    transform: rotate(90deg) translateY(-80px);
-}
-
-.compass .needle-south {
-    transform: rotate(180deg) translateY(-80px);
-}
-
-.compass .needle-west {
-    transform: rotate(270deg) translateY(-80px);
-}
-
-.compass .needle-north-east {
-    width: 60px;
-    height: 140px;
-    transform: rotate(45deg) translateY(-50px);
-}
-
-.compass .needle-north-west {
-    width: 60px;
-    height: 140px;
-    transform: rotate(-45deg) translateY(-50px);
-}
-
-.compass .needle-south-west {
-    width: 60px;
-    height: 140px;
-    transform: rotate(225deg) translateY(-50px);
-}
-
-.compass .needle-south-east {
-    width: 60px;
-    height: 140px;
-    transform: rotate(135deg) translateY(-50px);
-}
-
-.compass .compass-needle-north {
-    position: absolute;
-    width: 60px;
-    height: 140px;
-    background: rgb(186, 180, 179);
-    background: linear-gradient(90deg, var(--accent-color) 50%, var(--primary-font-color) 50%);
-    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
-    transform: rotate(0rad) translateY(-70px);
-}
-
-.compass .compass-needle-south {
-    position: absolute;
-    width: 60px;
-    height: 140px;
-    background: linear-gradient(90deg, black 50%, gray 50%);
-    clip-path: polygon(30% 100%, 50% 0%, 70% 100%);
-    transform: rotate(3.14159rad) translateY(-70px);
-}
-
-.compass .compass-pin {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: var(--accent-color);
-    border: 3px solid black;
-}
-
-.compass .letter-north {
-    font-size: 25px;
-    transition: font-size 1.5s cubic-bezier(0, .97, .5, 1);
-    border-radius: 50%;
-    align-self: flex-start;
-}
-
-.compass .letter-east {
-    font-size: 25px;
-    transition: font-size 1.5s cubic-bezier(0, .97, .5, 1);
-}
-
-.compass .letter-south {
-    font-size: 25px;
-    transition: font-size 1.5s cubic-bezier(0, .97, .5, 1);
-    align-self: flex-end;
-}
-
-.compass .letter-west {
-    font-size: 25px;
-    transition: font-size 1.5s cubic-bezier(0, .97, .5, 1);
-    justify-self: flex-end;
-}
-
 
 /* RESPONSIVE */
 @media only screen and (max-width: 790px) {
