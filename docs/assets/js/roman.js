@@ -24,6 +24,7 @@ var skills = {
     "react": 70,
     "html": 70,
     "css": 60,
+    "xslt": 65
 }
 
 Object.entries(skills).forEach(([skillName, percentage]) => {

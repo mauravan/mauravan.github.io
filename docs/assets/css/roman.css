@@ -47,9 +47,26 @@ body {
     justify-content: center;
 }
 
+@keyframes shadow {
+    0% {
+        text-shadow: 0 0 75px #E8E833;
+    }
+    25% {
+        text-shadow: 0 0 75px #EBBD36;
+    }
+    50% {
+        text-shadow: 0 0 75px #EF7967;
+    }
+    100% {
+        text-shadow: 0 0 75px #67EF94;
+    }
+
+}
+
 .aurora > div {
     position: absolute;
     z-index: 1;
+    animation: 5s infinite alternate shadow;
 }
 
 
