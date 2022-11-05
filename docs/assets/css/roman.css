@@ -507,7 +507,7 @@ main .about ul li::before {
 .skill-container > div {
     display: flex;
     flex-direction: row-reverse;
-    width: 90%;
+    width: 100%;
     justify-content: flex-end;
 }
 
@@ -516,16 +516,16 @@ main .about ul li::before {
 }
 
 
-.skill-name {
-    width: 20%;
-    background-color: var(--secondary-font-color);
+.skill-container > .skill-name {
+    width: 200px;
+    background-color: var(--secondary-bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .skill-bar {
-    background-color: var(--secondary-bg-color);
+    background-color: var(--secondary-font-color);
     height: 100%;
     color: var(--secondary-bg-color);
     transition: width 2s;

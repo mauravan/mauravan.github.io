@@ -56,9 +56,9 @@ Object.entries(skills).forEach(([skillName, percentage]) => {
 
     let left = document.createElement('div');
     left.appendChild(skillbar)
-    left.appendChild(text)
 
     container.appendChild(left)
+    container.appendChild(text)
 
     skillsParent.appendChild(container);
 });
