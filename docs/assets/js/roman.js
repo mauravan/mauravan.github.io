@@ -14,6 +14,16 @@ for (let i = 0; i < 20; i++) {
     auraContainer.appendChild(aura)
 }
 
+const star = document.getElementById("star");
+let boxShadow = []
+
+for (let i = 0; i < 150; i++) {
+     boxShadow.push(`${Math.random() * 100}vw ${Math.random() * 120}vh ${Math.random() * 5}px ${Math.random() * 2}px rgb(255,255,255,0.5)`);
+}
+
+star.style.boxShadow = boxShadow.join(",")
+
+
 // Skills
 const skillsParent = document.getElementById('skills');
 
@@ -193,6 +203,7 @@ function openWorkplace(evt, workplace) {
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.opacity = "0";
         tabcontent[i].style.zIndex = "0";
+        tabcontent[i].style.display = "none";
     }
 
     tablinks = document.getElementsByClassName("tablinks");
@@ -202,6 +213,7 @@ function openWorkplace(evt, workplace) {
 
     document.getElementById(workplace).style.opacity = "1";
     document.getElementById(workplace).style.zIndex = "1";
+    document.getElementById(workplace).style.display = "block";
     evt.currentTarget.className += " active";
 }
 

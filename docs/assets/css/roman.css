@@ -16,7 +16,8 @@
 html {
     scroll-behavior: smooth;
     color: var(--primary-font-color);
-    background-color: var(--main-bg-color);
+
+    background: linear-gradient(rgba(0,0,0,1) 10%, rgba(29,54,111,1) 20%);
 }
 
 b {
@@ -38,9 +39,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: 20;
-
-    background-color: var(--main-bg-color);
-
 
     display: flex;
     align-items: center;
@@ -86,6 +84,17 @@ body {
     transition: box-shadow 1s ease-out
 }
 
+.star {
+    position: absolute;
+    opacity:0.9;
+    top: 0;
+    left: 0;
+    display:block;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+  }
+
 
 /* LOGO */
 .logowrapper {
@@ -115,7 +124,6 @@ body {
 
 /* NAVIGATION */
 nav {
-    background-color: var(--main-bg-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -247,16 +255,16 @@ nav > svg {
 
 main {
     max-width: var(--max-main-width);
-    background-color: var(--main-bg-color);
     padding-top: calc(var(--navbar-height) + var(--body-margin));
 }
 
 main > section {
-    margin-bottom: 100vh;
+    margin-bottom: 90vh;
     font-size: xx-large;
 }
 
 main section:not(:nth-of-type(1)) {
+    margin-bottom: 50vh;
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
@@ -443,13 +451,10 @@ main .about ul li::before {
 }
 
 .tabcontent-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
 }
 
 .tabcontent {
-    grid-area: 1 / 1;
     opacity: 0;
     transition: opacity 0.5s linear;
     padding: 0 12px;
@@ -631,8 +636,20 @@ main .about ul li::before {
         max-width: 100%;
     }
 
+    main .about ul {
+        columns: 1;
+    }
+
     .tab-contianer {
         flex-direction: column;
+    }
+
+    .tab-contianer ul  {
+        column-count: 1;
+    }
+
+    .technologies {
+        align-self: auto;
     }
 
     .email-me {
