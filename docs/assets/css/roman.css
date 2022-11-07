@@ -651,10 +651,6 @@ main .about ul li::before {
         flex-direction: column;
     }
 
-    .tab-contianer ul  {
-        column-count: 1;
-    }
-
     .technologies {
         align-self: auto;
     }
@@ -665,6 +661,12 @@ main .about ul li::before {
 
     .connect-with-me {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .tab-contianer ul  {
+        column-count: 1;
     }
 }
 
