@@ -126,7 +126,7 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    top: 0;
+    top: -115px;
     transition: top 0.3s;
     z-index: 10;
     display: flex;
@@ -549,6 +549,9 @@ main .about ul li::before {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .email-me > a {
@@ -585,6 +588,9 @@ main .about ul li::before {
     height: clamp(25px, 8vw, 50px);
     color: var(--secondary-font-color);
     cursor: pointer;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .socials-icon-container {

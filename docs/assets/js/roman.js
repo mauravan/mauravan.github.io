@@ -58,7 +58,6 @@ Object.entries(skills).forEach(([skillName, percentage]) => {
     left.appendChild(skillbar)
 
     container.appendChild(left)
-    container.appendChild(text)
 
     skillsParent.appendChild(container);
 });
@@ -71,6 +70,8 @@ const navbarHeight = '-' + getComputedStyle(document.documentElement).getPropert
 let prevScrollpos = window.scrollY;
 
 const scrollLine = document.getElementById("scroll-line");
+const emailMe = document.getElementById("email-me");
+const connectWithMe = document.getElementById("connect-with-me");
 
 window.onscroll = () => {
     // Scroll-line
@@ -81,9 +82,23 @@ window.onscroll = () => {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("nav").style.top = '0px';
     } else {
-        document.getElementById("nav").style.top = navbarHeight;
+        if (currentScrollPos > 0) {
+            document.getElementById("nav").style.top = navbarHeight;
+        }
     }
     prevScrollpos = currentScrollPos;
+
+    if (currentScrollPos > 600) {
+        emailMe.style.opacity = 1;
+        connectWithMe.style.opacity = 1
+    }
+
+    if (currentScrollPos === 0) {
+        emailMe.style.opacity = 0;
+        connectWithMe.style.opacity = 0;
+        document.getElementById("nav").style.top = "-125px";
+    }
+
 
     for (const section of sections) {
         if (isElementStartingToBeInViewport(section, 175)) {
@@ -134,7 +149,6 @@ links.forEach(l => l.onclick = burgerOpenIcon.onclick)
 
 // Socials visibility
 const socialsContainer = document.getElementById("socials-icon-container")
-const connectWithMe = document.getElementById("connect-with-me")
 
 var lastTimeoutId;
 
