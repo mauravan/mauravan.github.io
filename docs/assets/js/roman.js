@@ -18,7 +18,15 @@ const star = document.getElementById("star");
 let boxShadow = []
 
 for (let i = 0; i < 150; i++) {
-     boxShadow.push(`${Math.random() * 100}vw ${Math.random() * 120}vh ${Math.random() * 5}px ${Math.random() * 2}px rgb(255,255,255,0.5)`);
+    let height;
+    if (i > 75) {
+        height = Math.random() * 100; 
+    } else {
+        height = Math.random() * 150;
+    }
+
+
+     boxShadow.push(`${Math.random() * 100}vw ${height}vh ${Math.random() * 5}px ${Math.random() * 2}px rgb(255,255,255,0.5)`);
 }
 
 star.style.boxShadow = boxShadow.join(",")
@@ -58,6 +66,7 @@ Object.entries(skills).forEach(([skillName, percentage]) => {
     left.appendChild(skillbar)
 
     container.appendChild(left)
+    container.appendChild(text)
 
     skillsParent.appendChild(container);
 });
