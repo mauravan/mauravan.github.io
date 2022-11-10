@@ -31,46 +31,6 @@ for (let i = 0; i < 150; i++) {
 
 star.style.boxShadow = boxShadow.join(",")
 
-
-// Skills
-const skillsParent = document.getElementById('skills');
-
-var skills = {
-    "java": 80,
-    "spring": 80,
-    "javascript": 75,
-    "react": 70,
-    "html": 70,
-    "css": 60,
-    "xslt": 65
-}
-
-Object.entries(skills).forEach(([skillName, percentage]) => {
-    let container = document.createElement('div');
-    container.classList.add('skill-container')
-
-    let skillbar = document.createElement('div');
-    skillbar.classList.add('skill-bar');
-    skillbar.id = skillName;
-    
-    let percentageText = document.createElement('span')
-    percentageText.innerText = percentage + "%";
-
-    container.appendChild(percentageText)
-    
-    let text = document.createElement('div')
-    text.classList.add('skill-name')
-    text.innerText = skillName;
-
-    let left = document.createElement('div');
-    left.appendChild(skillbar)
-
-    container.appendChild(left)
-    container.appendChild(text)
-
-    skillsParent.appendChild(container);
-});
-
 // Navbar Visibility
 // Sections Visibity
 const sections = document.getElementsByTagName('section');
@@ -114,13 +74,6 @@ window.onscroll = () => {
             section.style.opacity = 1;
         }
     }
-
-    if(isElementStartingToBeInViewport(skillsParent, 50)) {
-        skillsParent.querySelectorAll('.skill-bar').forEach((bar) => {
-            bar.style.width = skills[bar.id] + '%';
-        })
-    }
-
 }
 
 // Burger Menu
