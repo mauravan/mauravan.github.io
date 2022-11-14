@@ -1,6 +1,9 @@
 const auraContainer = document.getElementById("aura");
 
-for (let i = 0; i < 20; i++) {
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const numberOfAuras = Math.ceil(vw / 100);
+
+for (let i = 0; i < numberOfAuras; i++) {
     const initialShadow = `rgb(75, ${Math.random() * 255 + 100}, ${Math.random() * 255 + 60}) 0px 0px 100px 50px`
 
     const aura = document.createElement('span');
@@ -30,6 +33,34 @@ for (let i = 0; i < 150; i++) {
 }
 
 star.style.boxShadow = boxShadow.join(",")
+
+// HorizontalScroll
+const tabContainer = document.getElementById("tab-container");
+tabContainer.addEventListener('wheel', (evt) => {
+    const scrolledToEnd = tabContainer.scrollWidth - (tabContainer.scrollLeft + tabContainer.offsetWidth) === 0;
+    const scrolledToStart = tabContainer.scrollLeft === 0;
+
+    const shouldScrollRight = evt.deltaY > 0;
+    const shouldScrollLeft = evt.deltaY < 0;
+
+    if((shouldScrollRight && !scrolledToEnd) || (shouldScrollLeft && !scrolledToStart)) {
+        evt.preventDefault();
+        tabContainer.scrollLeft += evt.deltaY;
+    }
+});
+
+// blinks
+let array = [];
+const badges = document.getElementsByClassName('badges-div');
+Array.from(badges).forEach(badge => {
+    let next = array.pop();
+    if(next === undefined) {
+        array = [2, 3, 4, 5, 6, 7, 8].sort(el => 0.5 - Math.random());
+        next = array.pop()
+    }
+
+    badge.style.animationDelay = next + "s";
+});
 
 // Navbar Visibility
 // Sections Visibity
@@ -160,6 +191,7 @@ window.onresize = () => {
 }
 
 
+
 // functions
 function isElementStartingToBeInViewport(el, offset) {
     const rect = el.getBoundingClientRect();
@@ -170,29 +202,3 @@ function isElementStartingToBeInViewport(el, offset) {
         (rect.top + offset) <= (window.innerHeight || document.documentElement.clientHeight)
     );
 }
-
-function openWorkplace(evt, workplace) {
-    // Declare all variables
-    let i, tabcontent, tablinks;
-
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.opacity = "0";
-        tabcontent[i].style.zIndex = "0";
-        tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    document.getElementById(workplace).style.opacity = "1";
-    document.getElementById(workplace).style.zIndex = "1";
-    document.getElementById(workplace).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-
-document.getElementById("defaultOpen").click();
-

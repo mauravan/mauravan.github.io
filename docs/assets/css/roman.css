@@ -17,7 +17,7 @@ html {
     scroll-behavior: smooth;
     color: var(--primary-font-color);
 
-    background: linear-gradient(rgba(0,0,0,1) 10%, rgba(29,54,111,1) 20%);
+    background: linear-gradient(rgba(0, 0, 0, 1) 10%, rgba(29, 54, 111, 1) 20%);
 }
 
 b {
@@ -49,32 +49,43 @@ body {
     0% {
         text-shadow: 0 0 75px #E8E833;
     }
+
     25% {
         text-shadow: 0 0 75px #EBBD36;
     }
+
     50% {
         text-shadow: 0 0 75px #EF7967;
     }
+
     100% {
         text-shadow: 0 0 75px #67EF94;
     }
 
 }
 
-.aurora > div {
+.aurora>div {
     position: absolute;
     z-index: 1;
     animation: 5s infinite alternate shadow;
 }
 
 
-@keyframes topup{
-    0%, 100% {transform:translatey(0);}
-    50% {transform:translatey(130px)}
+@keyframes topup {
+    0% {
+        transform: translatey(0) skew(-0.01turn, 25deg);
+    }
+
+    50% {
+        transform: translatey(130px) skew(0.01turn, -25deg);
+    }
+
+    100% {
+        transform: translatey(0) skew(-0.01turn, 25deg);
+    }
 }
 
 .aura {
-    transform: skew(-0.06turn, 18deg);
     display: block;
     width: 0;
     margin-left: 80px;
@@ -86,14 +97,14 @@ body {
 
 .star {
     position: absolute;
-    opacity:0.9;
+    opacity: 0.9;
     top: 0;
     left: 0;
-    display:block;
+    display: block;
     width: 1px;
     height: 1px;
     border-radius: 50%;
-  }
+}
 
 
 /* LOGO */
@@ -134,7 +145,7 @@ nav {
     justify-content: space-between;
 }
 
-nav > ol {
+nav>ol {
     background-color: inherit;
     display: flex;
     flex-wrap: wrap;
@@ -145,30 +156,30 @@ nav > ol {
     list-style: none;
 }
 
-nav > ol > li {
+nav>ol>li {
     background-color: inherit;
     box-sizing: content-box;
     counter-increment: item;
     margin: 5px 12.5px;
 }
 
-nav > ol > li:not(:last-of-type)::before {
-    content: "0" counter(item) ".";
+nav>ol>li:not(:last-of-type)::before {
+    content: "0"counter(item) ".";
     margin-right: 5px;
     color: var(--secondary-font-color);
     text-align: right;
 }
 
-nav > ol > li > a {
+nav>ol>li>a {
     text-decoration: none;
     color: inherit;
 }
 
-nav > ol > li > a:hover {
+nav>ol>li>a:hover {
     color: var(--secondary-font-color);
 }
 
-nav > ol > li:last-of-type > a {
+nav>ol>li:last-of-type>a {
     text-decoration: none;
     color: inherit;
     border: 2px solid var(--primary-font-color);
@@ -177,11 +188,11 @@ nav > ol > li:last-of-type > a {
     margin-left: 16px;
 }
 
-nav > ol > li:last-of-type > a:last-of-type:hover {
+nav>ol>li:last-of-type>a:last-of-type:hover {
     background-color: var(--accent-color);
 }
 
-nav > svg {
+nav>svg {
     display: none;
     width: 30px;
     height: 30px;
@@ -204,30 +215,30 @@ nav > svg {
     padding-top: 60px;
 }
 
-.sidebar > ol {
+.sidebar>ol {
     margin-top: 60px;
     list-style: none;
 }
 
-.sidebar > ol > li:not(:last-of-type) {
+.sidebar>ol>li:not(:last-of-type) {
     font-size: large;
     counter-increment: item;
     margin: 15px 0;
     list-style: none;
 }
 
-.sidebar > ol li:not(:last-of-type)::before {
-    content: "0" counter(item) ".";
+.sidebar>ol li:not(:last-of-type)::before {
+    content: "0"counter(item) ".";
     margin-right: 5px;
     color: var(--secondary-font-color);
     text-align: right;
 }
 
-.sidebar > ol li:not(:last-of-type):hover {
+.sidebar>ol li:not(:last-of-type):hover {
     color: var(--secondary-font-color);
 }
 
-.sidebar > ol > li:last-of-type > a {
+.sidebar>ol>li:last-of-type>a {
     text-decoration: none;
     color: inherit;
     border: 2px solid var(--primary-font-color);
@@ -239,7 +250,7 @@ nav > svg {
     margin: 32px;
 }
 
-.sidebar > ol > li:last-of-type > a:hover {
+.sidebar>ol>li:last-of-type>a:hover {
     background-color: var(--accent-color);
 }
 
@@ -258,7 +269,7 @@ main {
     padding-top: calc(var(--navbar-height) + var(--body-margin));
 }
 
-main > section {
+main>section {
     margin-bottom: 90vh;
     font-size: xx-large;
 }
@@ -269,11 +280,11 @@ main section:not(:nth-of-type(1)) {
     transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
 
-main > section h3 {
+main>section h3 {
     display: inline-block;
 }
 
-main > section h3:first-of-type {
+main>section h3:first-of-type {
     display: inline-block;
     color: var(--secondary-font-color);
     margin-right: 10px;
@@ -329,13 +340,6 @@ main .about ul li::before {
     width: 1em;
 }
 
-.technologies {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .section-experience {
     display: flex;
     flex-direction: column;
@@ -345,7 +349,7 @@ main .about ul li::before {
     display: flex;
 }
 
-.contact-section > div {
+.contact-section>div {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -376,18 +380,29 @@ main .about ul li::before {
 
 }
 
-.build-by > p {
+.build-by>p {
     padding: 4px;
     margin: 0;
     font-size: small;
 }
 
 
-@keyframes blink{
-    0% { opacity: 0; }
-    90% { opacity: 1; }
-    95% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .scroll-line {
@@ -415,127 +430,81 @@ main .about ul li::before {
 /* TABLIST WORK */
 .tab-contianer {
     display: flex;
-}
-
-.tab-contianer ul  {
-    column-count: 2;
-}
-
-.tab {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.tab button {
-    background-color: var(--main-bg-color);
-    color: var(--primary-font-color);
-
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 40px 16px;
-    transition: 0.3s;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-
-    border-left: 3px solid var(--secondary-bg-color);
-}
-
-.tab button:hover {
-    background-color: var(--secondary-bg-color);
-}
-
-.tab button.active {
-    border-left: 3px solid var(--accent-color);
-}
-
-.tabcontent-container {
-    display: flex;
+    overflow-x: hidden;
+    border-top: 1px solid var(--secondary-font-color);
+    border-bottom: 1px solid var(--secondary-font-color);
 }
 
 .tabcontent {
-    opacity: 0;
-    transition: opacity 0.5s linear;
-    padding: 0 12px;
-    border-top: none;
-    margin-left: 16px;
-
-    border-top: 2px solid var(--secondary-bg-color);
+    flex-shrink: 0;
+    width: 90%;
+    margin-right: 200px;
+    max-height: 80%;
 }
 
-.tabcontent ul {
-    padding: 16px;
-    list-style: none;
+.tabcontent:last-of-type {
+    margin-right: 20px;
 }
 
-.tabcontent ul li {
-    margin-bottom: 12px;
-    list-style: none;
-}
-
-.tabcontent ul li::before {
-    content: "\2022";
-    color: var(--accent-color);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-/* SKILLS */
-.skills {
-    position: relative;
-    padding: 32px;
-    border: 4px solid var(--secondary-font-color);
-    max-width: 700px;
-    align-self: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.skill-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: var(--main-bg-color);
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    font-size: 1.5rem;
-}
-
-.skill-container > div {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    justify-content: flex-end;
-}
-
-.skill-container > span {
-    color: var(--secondary-font-color);
-}
-
-
-.skill-container > .skill-name {
-    max-width: 180px;
-    min-width: 110px;
-    background-color: var(--secondary-bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.skill-bar {
-    background-color: var(--secondary-font-color);
-    height: 100%;
+.tabcontent > h5 {
     color: var(--secondary-bg-color);
-    transition: width 2s;
-    transition-delay: 1s;
-    width: 0;
+    margin-top: -40px;
+    margin-bottom: 15px;
 }
 
-.skill-bar > span {
-    background-color: var(--secondary-font-color);
+/* LOGO-BADGES */
+.badges-main {
+    display:flex;
+    justify-content: center;
+  --s: 200px;  /* size  */
+  --m: 4px;    /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
+  --svg-s: 100px;
+  margin-bottom: 100px;
+}
+
+.badges-container {
+    font-size: 0; /* disable white space between inline block element */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+
+.badges-div {
+    width: var(--s);
+    margin: var(--m);
+    height: calc(var(--s) * 1.1547);
+    display: inline-block;
+    font-size:initial;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+    background-color: #08C076;
+    animation: 7s ease-out infinite forwards blink;
+}
+
+.badges-div > div {
+    position: relative;
+    top: calc(50% - var(--svg-s) / 2);
+    left: calc(50% - var(--svg-s) / 2);
+}
+
+.badges-container::before {
+    content: "";
+    width: calc(var(--s) / 2 + var(--m));
+    float: left;
+    height: 120%; 
+    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
+  }
+
+.badges-div svg {
+    width: var(--svg-s);
+    height: var(--svg-s);
 }
 
 /* EMAIL ADDRESS */
@@ -555,14 +524,14 @@ main .about ul li::before {
     transition: opacity 1s ease-in-out;
 }
 
-.email-me > a {
+.email-me>a {
     text-decoration: none;
     color: var(--secondary-font-color);
     font-weight: bold;
     margin: 10px;
 }
 
-.email-me > a:hover {
+.email-me>a:hover {
     color: var(--secondary-font-color);
 }
 
@@ -627,11 +596,11 @@ main .about ul li::before {
 
 /* RESPONSIVE */
 @media only screen and (max-width: 790px) {
-    nav > svg#hamburger {
+    nav>svg#hamburger {
         display: block;
     }
 
-    nav > ol {
+    nav>ol {
         display: none;
     }
 
@@ -647,14 +616,6 @@ main .about ul li::before {
         columns: 1;
     }
 
-    .tab-contianer {
-        flex-direction: column;
-    }
-
-    .technologies {
-        align-self: auto;
-    }
-
     .email-me {
         display: none !important;
     }
@@ -665,7 +626,7 @@ main .about ul li::before {
 }
 
 @media only screen and (max-width: 1450px) {
-    .tab-contianer ul  {
+    .tab-contianer ul {
         column-count: 1;
     }
 }
@@ -678,7 +639,14 @@ main .about ul li::before {
 
 
 @media only screen and (max-height: 1100px) {
-    main > section {
+    main>section {
         min-height: 90vh !important;
     }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .tab-contianer {
+        overflow-x: scroll;
+    }
+    
 }
