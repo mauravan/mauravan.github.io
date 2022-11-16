@@ -23,13 +23,13 @@ let boxShadow = []
 for (let i = 0; i < 150; i++) {
     let height;
     if (i > 75) {
-        height = Math.random() * 100; 
+        height = Math.random() * 100;
     } else {
         height = Math.random() * 150;
     }
 
 
-     boxShadow.push(`${Math.random() * 100}vw ${height}vh ${Math.random() * 5}px ${Math.random() * 2}px rgb(255,255,255,0.5)`);
+    boxShadow.push(`${Math.random() * 100}vw ${height}vh ${Math.random() * 5}px ${Math.random() * 2}px rgb(255,255,255,0.5)`);
 }
 
 star.style.boxShadow = boxShadow.join(",")
@@ -43,18 +43,18 @@ tabContainer.addEventListener('wheel', (evt) => {
     const shouldScrollRight = evt.deltaY > 0;
     const shouldScrollLeft = evt.deltaY < 0;
 
-    if((shouldScrollRight && !scrolledToEnd) || (shouldScrollLeft && !scrolledToStart)) {
+    if ((shouldScrollRight && !scrolledToEnd) || (shouldScrollLeft && !scrolledToStart)) {
         evt.preventDefault();
         tabContainer.scrollLeft += evt.deltaY;
     }
-});
+}, { passive: false });
 
 // blinks
 let array = [];
 const badges = document.getElementsByClassName('badges-div');
 Array.from(badges).forEach(badge => {
     let next = array.pop();
-    if(next === undefined) {
+    if (next === undefined) {
         array = [2, 3, 4, 5, 6, 7, 8].sort(el => 0.5 - Math.random());
         next = array.pop()
     }
@@ -73,7 +73,7 @@ const scrollLine = document.getElementById("scroll-line");
 const emailMe = document.getElementById("email-me");
 const connectWithMe = document.getElementById("connect-with-me");
 
-window.onscroll = () => {
+window.addEventListener('scroll', () => {
     // Scroll-line
     scrollLine.style.display = 'none'
 
@@ -105,7 +105,7 @@ window.onscroll = () => {
             section.style.opacity = 1;
         }
     }
-}
+}, { passive: true });
 
 // Burger Menu
 const burgerIcon = document.getElementById("hamburger")
@@ -165,7 +165,7 @@ socialsContainer.onmouseout = () => {
     lastTimeoutId = setTimeout(() => socialsContainer.style.pointerEvents = 'none', 1000)
 }
 
-window.onmousemove = (e) => {
+window.addEventListener('mousemove', (e) => {
     let Xmouse = e.pageX
     let Ymouse = e.pageY
 
@@ -173,10 +173,10 @@ window.onmousemove = (e) => {
     const Xtop = Ymouse;
 
     Array.from(auraContainer.children).forEach((child) => {
-        const { left, right, top, bottom  } = child.getBoundingClientRect()
+        const { left, right, top, bottom } = child.getBoundingClientRect()
 
         if (Xright > left && Xright < (left + 100) && Xtop > top && Xtop < bottom) {
-            if(child.classList.contains("aura")) {
+            if (child.classList.contains("aura")) {
                 child.style.boxShadow = `0px 0px 100px 50px rgb(${Math.random() * 40 + 200}, ${Math.random() * 160}, ${Math.random() * 40}) `;
             }
         } else {
@@ -184,13 +184,11 @@ window.onmousemove = (e) => {
         }
 
     });
-}
+}, { passive: true })
 
-window.onresize = () => {
+window.addEventListener('resize', () => {
     sidebar.style.width = '0';
-}
-
-
+}, { passive: true });
 
 // functions
 function isElementStartingToBeInViewport(el, offset) {
