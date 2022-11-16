@@ -601,6 +601,8 @@ main .about ul li::before {
     margin-bottom: 100px;
 }
 
+
+
 .badges-container {
     font-size: 0;
     /* disable white space between inline block element */
@@ -739,6 +741,10 @@ main .about ul li::before {
 @media only screen and (max-width: 790px) {
     nav>svg#hamburger {
         display: block;
+    }
+
+    .badges-main {
+        --s: 150px;
     }
 
     nav>ol {
